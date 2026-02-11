@@ -14,11 +14,12 @@ describe('Inline Tool Link', () => {
     });
 
     cy.get('[data-cy=editorjs]')
-      .find('div.ce-block')
-      .click()
-      .type('{selectall}')
-      .wait(200)
-      .type('{ctrl}K');
+      .find('.ce-paragraph')
+      .selectText('First block text');
+
+    cy.get('[data-cy=editorjs]')
+      .find('[data-item-name=link]')
+      .click();
 
     cy.get('[data-cy=editorjs]')
       .find('.ce-inline-tool-input')
@@ -53,12 +54,13 @@ describe('Inline Tool Link', () => {
     });
 
     cy.get('[data-cy=editorjs]')
-      .find('div.ce-block')
+      .find('.ce-paragraph')
       .first()
-      .click()
-      .type('{selectall}')
-      .wait(200)
-      .type('{ctrl}K');
+      .selectText('First block text');
+
+    cy.get('[data-cy=editorjs]')
+      .find('[data-item-name=link]')
+      .click();
 
     cy.get('[data-cy=editorjs]')
       .find('div.ce-block')
@@ -87,11 +89,12 @@ describe('Inline Tool Link', () => {
     });
 
     cy.get('[data-cy=editorjs]')
-      .find('div.ce-block')
-      .click()
-      .type('{selectall}')
-      .wait(200)
-      .type('{ctrl}K');
+      .find('.ce-paragraph')
+      .selectText('Text with link');
+
+    cy.get('[data-cy=editorjs]')
+      .find('[data-item-name=link]')
+      .click();
 
     cy.get('[data-cy=editorjs]')
       .find('.ce-inline-tool-input')
@@ -106,10 +109,11 @@ describe('Inline Tool Link', () => {
     cy.get('[data-cy=editorjs]')
       .find('div.ce-block')
       .find('a')
-      .click()
-      .type('{selectall}')
-      .wait(200)
-      .type('{ctrl}B');
+      .selectText('Text with link');
+
+    cy.get('[data-cy=editorjs]')
+      .find('[data-item-name=bold]')
+      .click();
 
     cy.get('[data-cy=editorjs]')
       .find('div.ce-block')
